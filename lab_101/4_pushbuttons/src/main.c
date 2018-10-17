@@ -21,7 +21,8 @@
 // map the led to GPIO PI_1 (the inbuilt led) and the push button to PI_11 
 // (the user button)
 gpio_pin_t led = {PI_1, GPIOI, GPIO_PIN_1};
-gpio_pin_t pb1 = {PI_11, GPIOI, GPIO_PIN_11};
+//gpio_pin_t pb1 = {PI_11, GPIOI, GPIO_PIN_11};
+gpio_pin_t pb1 = {PB_14, GPIOB, GPIO_PIN_14};
 
 // this is the main method
 int main()
@@ -38,16 +39,16 @@ int main()
   // loop forever ...
   while(1)
   {
-    // if the button is pressed ...
-    if(read_gpio(pb1))
-    {
-      // turn the led on on the gpio pin
-      write_gpio(led, HIGH);
-    }
-    else
-    {
-      // turn the led off on the gpio pin
-      write_gpio(led, LOW);
-    }
-  }
+		//read the pushbutton and debounce it
+		int button_state = read_gpio(pb1);
+		HAL_Delay(50);
+		button_state = button_state & read_gpio(pb1);
+		
+		// if the button is pressed ...
+		if(button_state)
+			{
+				// toggle the led on the gpio pin
+				toggle_gpio(led);
+			}
+	}
 }

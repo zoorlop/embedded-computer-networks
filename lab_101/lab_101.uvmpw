@@ -9,19 +9,23 @@
 
   <project>
     <PathAndName>.\1_blinky\mdk-arm\blinky.uvprojx</PathAndName>
-    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\2_blinky_with_shu_libraries\mdk-arm\blinky_with_libraries.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\3_exercises\mdk-arm\exercises.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\4_pushbuttons\mdk-arm\pushbuttons.uvprojx</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>

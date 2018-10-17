@@ -19,9 +19,11 @@
 #include "gpio.h"
 
 // map the led to GPIO PI1 (again, this is the inbuilt led)
+
 gpio_pin_t led_red = {PI_1, GPIOI, GPIO_PIN_1};
 gpio_pin_t led_yellow = {PB_14, GPIOB, GPIO_PIN_14};
 gpio_pin_t led_green = {PB_15, GPIOB, GPIO_PIN_15};
+
 
 // this is the main method
 int main()
@@ -32,13 +34,12 @@ int main()
   init_sysclk_216MHz();
   
   // initialise the gpio pins
+		
   init_gpio(led_red, OUTPUT);
   init_gpio(led_yellow, OUTPUT);
 	init_gpio(led_green, OUTPUT);
 	
-  // loop forever ...
-  while(1)
-  {
+
     // red on, yellow off
 			write_gpio(led_red,HIGH);
 			write_gpio(led_yellow, LOW);
